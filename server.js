@@ -7,13 +7,16 @@ const PORT = process.env.PORT || 5000;
 pool.query('SELECT NOW()', (err, result) => {
     if (err) {
         console.error('Database connection error:', err);
-        process.exit(1);
     } else {
         console.log('Database connected successfully');
     }
 });
 
+pool.on('error', (err) => {
+    console.error('Pool error:', err);
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-    console.log(`Press Ctrl+C to stop the server`);
 });
