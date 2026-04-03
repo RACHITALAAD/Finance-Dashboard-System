@@ -1,6 +1,6 @@
 const userService = require('../services/userService');
 
-// Get all users (Admin only)
+// Get all users 
 const getAllUsers = async (req, res) => {
     try {
         const users = await userService.getAllUsers();
@@ -34,7 +34,7 @@ const getUserProfile = async (req, res) => {
     }
 };
 
-// Update user role (Admin only)
+// Update user role 
 const updateUserRole = async (req, res) => {
     try {
         const { userId } = req.params;
@@ -55,7 +55,7 @@ const updateUserRole = async (req, res) => {
     }
 };
 
-// Update user status (Admin only)
+// Update user status 
 const updateUserStatus = async (req, res) => {
     try {
         const { userId } = req.params;

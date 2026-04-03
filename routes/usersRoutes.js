@@ -4,7 +4,7 @@ const { authenticateToken, authorize } = require('../middleware/auth');
 
 const router = express.Router();
 
-// Get all users - Admin only
+// Get all users 
 router.get(
     '/',
     authenticateToken,
@@ -19,7 +19,7 @@ router.get(
     usersController.getUserProfile
 );
 
-// Update user role - Admin only
+// Update user role 
 router.put(
     '/:userId/role',
     authenticateToken,
@@ -27,7 +27,7 @@ router.put(
     usersController.updateUserRole
 );
 
-// Update user status - Admin only
+// Update user status 
 router.put(
     '/:userId/status',
     authenticateToken,

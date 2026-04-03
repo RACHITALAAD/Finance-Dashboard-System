@@ -1,6 +1,5 @@
 const dashboardService = require('../services/dashboardService');
 
-// Get financial summary
 const getFinancialSummary = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -15,7 +14,6 @@ const getFinancialSummary = async (req, res) => {
     }
 };
 
-// Get category breakdown
 const getCategoryBreakdown = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -30,7 +28,7 @@ const getCategoryBreakdown = async (req, res) => {
     }
 };
 
-// Get recent activity
+
 const getRecentActivity = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -47,7 +45,6 @@ const getRecentActivity = async (req, res) => {
     }
 };
 
-// Get monthly trends
 const getMonthlyTrends = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -62,7 +59,6 @@ const getMonthlyTrends = async (req, res) => {
     }
 };
 
-// Get admin dashboard (only for admin users)
 const getAdminDashboard = async (req, res) => {
     try {
         const dashboard = await dashboardService.getAdminDashboard();

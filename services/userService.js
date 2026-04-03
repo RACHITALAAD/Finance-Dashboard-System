@@ -48,7 +48,7 @@ const getUserById = async (id) => {
     }
 };
 
-// Get all users (Admin only)
+// Get all users 
 const getAllUsers = async () => {
     try {
         const result = await pool.query(
@@ -60,7 +60,7 @@ const getAllUsers = async () => {
     }
 };
 
-// Update user role (Admin only)
+// Update user role 
 const updateUserRole = async (userId, newRole) => {
     try {
         if (!['viewer', 'analyst', 'admin'].includes(newRole)) {
@@ -78,7 +78,7 @@ const updateUserRole = async (userId, newRole) => {
     }
 };
 
-// Update user status (Admin only)
+// Update user status 
 const updateUserStatus = async (userId, status) => {
     try {
         if (!['active', 'inactive'].includes(status)) {
