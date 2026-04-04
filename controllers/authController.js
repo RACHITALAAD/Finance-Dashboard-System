@@ -19,7 +19,10 @@ const register = async (req, res) => {
             return res.status(400).json({ error: 'Password must be at least 6 characters' });
         }
 
-        const user = await userService.createUser(email, password, full_name, 'viewer');
+        const existingUsers = await userService.getAllUsers();
+        const role = existingUsers.length === 0 ? 'admin' : 'viewer';
+
+        const user = await userService.createUser(email, password, full_name, role);
 
         const token = jwt.sign(
             { id: user.id, email: user.email, role: user.role },
