@@ -1,4 +1,4 @@
-# Finance Data Processing and Access Control Backend
+# Finance Data Processing and Access Control
 
 A backend system for a finance dashboard built with Node.js, Express, and PostgreSQL. It handles user roles, financial record management, and summary analytics.
 
