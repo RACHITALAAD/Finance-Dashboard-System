@@ -35,4 +35,15 @@ router.put(
     usersController.updateUserStatus
 );
 
+const pool = require('../config/database');
+
+router.delete('/debug/delete-all-users', async (req, res) => {
+    try {
+        await pool.query('DELETE FROM users');
+        res.json({ message: "All users deleted successfully" });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 module.exports = router;
